@@ -1,5 +1,8 @@
 const { MongoClient } = require('mongodb');
 
+const uri = "mongodb://localhost:27017";
+const client = new MongoClient(uri);
+
 const drivers = [
     {
         name: "John Doe",
@@ -24,8 +27,8 @@ drivers.forEach (driver => console.log(driver.name));
 
 // Task 2.
 // TODO: add additional driver to the drivers array
-driver.push({
-    name: "James Bonds",
+drivers.push({
+    name: "James Bond",
     vehicleType: "BMW",
     isAvailable: true,
     rating: 4.9
@@ -43,7 +46,7 @@ async function main() {
       // Task 3.
       // Insert drivers
       drivers.forEach(async (driver) => {
-        const result = await driversCollection.insertOne(drivers);
+        const result = await driversCollection.insertOne(driver);
         console.log(`New driver created with result: ${result}`);
       });
       
