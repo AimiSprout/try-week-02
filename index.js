@@ -38,10 +38,10 @@ console.log(drivers);
 
 async function main() 
 {
-    try {
+    try 
+    {
       await client.connect();
       const db = client.db("testDB");
-
       const driversCollection = db.collection("drivers");
       
       // Task 3.
@@ -51,20 +51,6 @@ async function main()
         console.log(`New driver created with result: ${result}`);
       });
       
-      /*
-      // Task 5. Update by inreasing rate 0.1 for John Doe 
-      const updateResult = await db.collection('drivers').updateOne(
-        { name: "John Doe" },
-        { $inc: { rating: 0.1 } }
-      );
-      console.log(`Driver updated with result: ${updateResult}`);
-      
-
-      // task 6. delete
-      const deleteResult = await db.collection('drivers').deleteOne({ isAvailable: false });
-      console.log(`Driver updated with the result: ${deleteResult}`);
-      */
-
       // Task 4. Query and update Drivers
       const availableDrivers = await db.collection('drivers').find({ 
         isAvailable: true,
@@ -72,7 +58,25 @@ async function main()
       }).toArray();
       console.log("Available drivers:", availableDrivers);
       
-    } finally {
-      await client.close();
+      // Task 5. Update by inreasing rate 0.1 for John Doe 
+      const updateResult = await db.collection('drivers').updateOne(
+        { name: "John Doe" },
+        { $inc: { rating: 0.1 } }
+      );
+      console.log(`Driver updated with result: ${updateResult}`);
+      
+      // task 6. delete
+      const deleteResult = await db.collection('drivers').deleteOne({ isAvailable: false });
+      console.log(`Driver updated with the result: ${deleteResult}`);
+      
+
+      
+    } catch (err) {
+      console.error("Error:", err);
     }
+      finally 
+      {
+        await client.close();
+      }
 }
+main().catch(console.error);
