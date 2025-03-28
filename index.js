@@ -58,10 +58,12 @@ async function main()
         { $inc: { rating: 0.1 } }
       );
       console.log(`Driver updated with result: ${updateResult}`);
+      
 
       // task 6. delete
       const deleteResult = await db.collection('drivers').deleteOne({ isAvailable: false });
       console.log(`Driver updated with the result: ${deleteResult}`);
+      */
 
       // Task 4. Query and update Drivers
       const availableDrivers = await db.collection('drivers').find({ 
