@@ -126,13 +126,14 @@ async function main() {
         const db = client.db("testDB");
         const driversCollection = db.collection("drivers");
 
+        /*
         // Task 3: Insert drivers into MongoDB
         for (const driver of drivers) {
             const result = await driversCollection.insertOne(driver);
             console.log(`New driver created with result: ${JSON.stringify(result)}`);
         }
+        */
         
-        /*
         // Task 4: Query available drivers with rating >= 4.5
         const availableDrivers = await driversCollection.find({
             isAvailable: true,
@@ -140,6 +141,7 @@ async function main() {
         }).toArray();
         console.log("Available drivers:", availableDrivers);
 
+        /*
         // Task 5: Update John Doe's rating by 0.1
         const updateResult = await driversCollection.updateOne(
             { name: "John Doe" },
@@ -151,7 +153,7 @@ async function main() {
         const deleteResult = await driversCollection.deleteMany({ isAvailable: false });
         console.log(`Driver(s) deleted with result: ${JSON.stringify(deleteResult)}`);
         */
-       
+
     } catch (err) {
         console.error("Error:", err);
     } finally {
