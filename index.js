@@ -36,7 +36,8 @@ drivers.push({
 console.log(drivers);
         
 
-async function main() {
+async function main() 
+{
     try {
       await client.connect();
       const db = client.db("testDB");
@@ -72,4 +73,4 @@ async function main() {
     } finally {
       await client.close();
     }
-  }
+}
