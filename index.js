@@ -71,7 +71,7 @@ async function main()
         rating: { $gte: 4.5 }
       }).toArray();
       console.log("Available drivers:", availableDrivers);
-      */
+      
     } finally {
       await client.close();
     }
