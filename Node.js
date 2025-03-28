@@ -50,6 +50,7 @@ async function main() {
         console.log(`New driver created with result: ${result}`);
       });
       
+      /*
       // Task 5. Update by inreasing rate 0.1 for John Doe 
       const updateResult = await db.collection('drivers').updateOne(
         { name: "John Doe" },
@@ -67,7 +68,7 @@ async function main() {
         rating: { $gte: 4.5 }
       }).toArray();
       console.log("Available drivers:", availableDrivers);
-
+      */
     } finally {
       await client.close();
     }
