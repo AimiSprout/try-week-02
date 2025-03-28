@@ -83,6 +83,8 @@ async function main()
 main().catch(console.error);
 */
 
+
+/// this one dia output lain so kena phm kan. esk try buat asing '' task i mean run each code
 const { MongoClient } = require('mongodb');
 
 const uri = "mongodb://localhost:27017";
@@ -129,7 +131,8 @@ async function main() {
             const result = await driversCollection.insertOne(driver);
             console.log(`New driver created with result: ${JSON.stringify(result)}`);
         }
-
+        
+        /*
         // Task 4: Query available drivers with rating >= 4.5
         const availableDrivers = await driversCollection.find({
             isAvailable: true,
@@ -147,7 +150,8 @@ async function main() {
         // Task 6: Delete unavailable drivers
         const deleteResult = await driversCollection.deleteMany({ isAvailable: false });
         console.log(`Driver(s) deleted with result: ${JSON.stringify(deleteResult)}`);
-
+        */
+       
     } catch (err) {
         console.error("Error:", err);
     } finally {
