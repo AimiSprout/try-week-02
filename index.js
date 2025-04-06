@@ -1,4 +1,3 @@
-/*
 const { MongoClient } = require('mongodb');
 
 const uri = "mongodb://localhost:27017";
@@ -81,9 +80,9 @@ async function main()
       }
 }
 main().catch(console.error);
-*/
 
 
+/*
 /// this one dia output lain so kena phm kan. esk try buat asing '' task i mean run each code
 const { MongoClient } = require('mongodb');
 
@@ -162,3 +161,4 @@ async function main() {
 }
 
 main().catch(console.error);
+*/
